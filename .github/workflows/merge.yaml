@@ -59,6 +59,6 @@ jobs:
         run: github-comment exec -- deny-self-approve -pr "$GH_COMMENT_PR_NUMBER" validate -dismiss
       - name: Merge
         run: |
-          github-comment exec -- gh pr merge "$GH_COMMENT_PR_NUMBER" -s
+          github-comment exec -- gh pr merge "$GH_COMMENT_PR_NUMBER" -s --admin
         env:
           GITHUB_TOKEN: ${{steps.token.outputs.token}}
